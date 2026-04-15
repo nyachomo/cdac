@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parents & Guardians - School Website</title>
+    <style>
+        /* Official School Colors */
+        :root {
+            --primary-navy: #1A3557;
+            --secondary-gold: #F4A61D;
+            --soft-white: #F8F9FA;
+            --body-text: #2D2D2D;
+        }
+
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background-color: var(--soft-white); 
+            color: var(--body-text); 
+            margin: 0; 
+        }
+
+        h1, h2, h3 { 
+            font-family: 'Georgia', serif; 
+            color: var(--primary-navy); 
+        }
+
+        /* Dark Navy Sections */
+        .navbar, .hero, .footer { 
+            background-color: var(--primary-navy); 
+            color: white !important; /* Forces text to be white on dark background */
+        }
+
+        .navbar { padding: 15px 5%; display: flex; justify-content: space-between; }
+        .hero { text-align: center; padding: 60px 20px; }
+        .hero h1 { color: white !important; margin: 0; }
+
+        .main-content { 
+            max-width: 1100px; 
+            margin: 20px auto; 
+            padding: 40px; 
+            background: white;
+            border-radius: 8px;
+        }
+
+        .footer { text-align: center; padding: 20px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><strong>School Name</strong></div>
+        <div class="links">Links will be added by Martin</div>
+    </nav>
+
+    <header class="hero">
+        <h1>Parents & Guardians</h1>
+        <p>Your portal for PTA info, guides, and communication.</p>
+    </header>
+
+    <main class="main-content">
+        <section>
+            <h2>PTA Information</h2>
+            <p>Welcome to the Parent Teacher Association section. We meet every first Saturday of the month.</p>
+        </section>
+
+        <section>
+            <h2>Parent Portal Guide</h2>
+            <p>Access your child's grades and attendance by logging into the portal using your registered ID.</p>
+        </section>
+
+        <section>
+            <h2>Communication Channels</h2>
+            <ul>
+                <li>Email: support@school.ac.ke</li>
+                <li>Phone: +254 700 000000</li>
+                <li>WhatsApp: Parent Group Link</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>FAQ</h2>
+            <p><strong>How do I pay fees?</strong> Use the school paybill number 123456.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>School Name &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
