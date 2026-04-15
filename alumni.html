@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excellence School Alumni</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #F8F9FA;
+        }
+
+        h1, h2, h3 {
+            font-family: Georgia, serif;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #1A3557;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 40px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        /* HERO */
+        .hero {
+            background-color: #1A3557;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        /* MAIN CONTENT */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px;
+        }
+
+        /* CARDS */
+        .card {
+            background: white;
+            border: 1px solid #E9ECEF;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        /* GRID */
+        .grid {
+            display: flex;
+            gap: 20px;
+        }
+
+        .grid .card {
+            flex: 1;
+        }
+
+        /* BUTTON */
+        .btn {
+            display: inline-block;
+            background-color: #F4A61D;
+            color: #1A3557;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: #1A3557;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .grid {
+                flex-direction: column;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div><strong>Excellence School</strong></div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Admissions</a>
+            <a href="#">Alumni</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>Our Alumni</h1>
+        <p>Celebrating success, connection, and lifelong achievement.</p>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+
+        <!-- NOTABLE ALUMNI -->
+        <h2>Notable Alumni</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Jane Doe</h3>
+                <p>CEO of TechCorp, leading innovations in AI and technology.</p>
+            </div>
+
+            <div class="card">
+                <h3>John Smith</h3>
+                <p>Award-winning doctor and global health advocate.</p>
+            </div>
+
+            <div class="card">
+                <h3>Mary Wanjiku</h3>
+                <p>Entrepreneur and founder of a successful fintech startup.</p>
+            </div>
+        </div>
+
+        <!-- ALUMNI ASSOCIATION -->
+        <h2>Alumni Association</h2>
+        <div class="card">
+            <p>
+                The Excellence School Alumni Association connects graduates across generations,
+                fostering networking, mentorship, and community engagement.
+            </p>
+            <a href="#" class="btn">Join the Association</a>
+        </div>
+
+        <!-- SUCCESS STORIES -->
+        <h2>Success Stories</h2>
+        <div class="card">
+            <p>
+                Our alumni continue to make an impact globally. From business leaders to healthcare
+                professionals, Excellence School graduates embody leadership and innovation.
+            </p>
+        </div>
+
+        <!-- REUNION EVENTS -->
+        <h2>Reunion Events</h2>
+        <div class="card">
+            <p><strong>Annual Alumni Reunion</strong> – December 2026</p>
+            <p>Reconnect with classmates, meet new alumni, and celebrate shared memories.</p>
+            <a href="#" class="btn">Register Now</a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>Excellence School © 2026</p>
+    </div>
+
+</body>
+</html>
