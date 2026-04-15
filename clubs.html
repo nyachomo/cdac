@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubs & Societies - School Website</title>
+    <style>
+        /* SECTION 1: DESIGN GUIDELINES - COLOURS & TYPOGRAPHY */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F8F9FA; [span_4](start_span)/* Soft White[span_4](end_span) */
+            font-family: Arial, sans-serif; [span_5](start_span)/* Body font[span_5](end_span) */
+            color: #2D2D2D; [span_6](start_span)/* Body text[span_6](end_span) */
+        }
+
+        h1, h2, h3 {
+            font-family: Georgia, serif; [span_7](start_span)/* Heading font[span_7](end_span) */
+            color: #1A3557; [span_8](start_span)/* School Navy[span_8](end_span) */
+            font-weight: bold;
+        }
+
+        h1 { font-size: 32px; }
+        h2 { font-size: 26px; }
+        h3 { font-size: 20px; }
+
+        [span_9](start_span)/* NAVIGATION BAR[span_9](end_span) */
+        .navbar {
+            background-color: #1A3557; [span_10](start_span)/* School Navy[span_10](end_span) */
+            color: #FFFFFF;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+        }
+
+        .navbar .school-name {
+            font-size: 20px;
+            font-family: Georgia, serif;
+            font-weight: bold;
+        }
+
+        .navbar-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600; [span_11](start_span)/* Semi-bold[span_11](end_span) */
+            margin-left: 20px;
+        }
+
+        .navbar-links a:hover {
+            color: #F4A61D; [span_12](start_span)/* Gold Accent hover[span_12](end_span) */
+        }
+
+        [span_13](start_span)/* HERO SECTION[span_13](end_span) */
+        .hero {
+            background-color: #1A3557; [span_14](start_span)/* School Navy background[span_14](end_span) */
+            color: #FFFFFF;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 { color: #FFFFFF; margin-bottom: 10px; }
+
+        [span_15](start_span)/* MAIN CONTENT AREA[span_15](end_span) */
+        .main-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px; [span_16](start_span)/* 40px side padding[span_16](end_span) */
+        }
+
+        [span_17](start_span)/* CARDS[span_17](end_span) */
+        .club-card {
+            background-color: #FFFFFF;
+            border: 1px solid #E9ECEF; [span_18](start_span)/* Light Grey border[span_18](end_span) */
+            border-radius: 12px; [span_19](start_span)/* 12px radius[span_19](end_span) */
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); [span_20](start_span)/* Subtle shadow[span_20](end_span) */
+        }
+
+        .meeting-tag {
+            color: #2E7D32; [span_21](start_span)/* Leaf Green[span_21](end_span) */
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        [span_22](start_span)/* BUTTONS[span_22](end_span) */
+        .btn {
+            background-color: #F4A61D; [span_23](start_span)/* Gold Accent[span_23](end_span) */
+            color: #1A3557; [span_24](start_span)/* Navy text[span_24](end_span) */
+            border: none;
+            border-radius: 8px; [span_25](start_span)/* 8px radius[span_25](end_span) */
+            padding: 12px 24px; [span_26](start_span)/* 12px 24px padding[span_26](end_span) */
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        [span_27](start_span)/* FOOTER[span_27](end_span) */
+        .footer {
+            background-color: #1A3557; [span_28](start_span)/* Navy background[span_28](end_span) */
+            color: #F8F9FA;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        [span_29](start_span)/* RESPONSIVE DESIGN[span_29](end_span) */
+        @media (max-width: 768px) {
+            .main-content { padding: 20px; }
+            .navbar { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="school-name">School Website</div>
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="clubs.html" style="color: #F4A61D;">Clubs</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h1>Clubs & Societies</h1>
+        <p>Explore your interests and join a community that shares your passion.</p>
+    </div>
+
+    <div class="main-content">
+        <h2>Our Active Clubs</h2>
+        <p>Participating in clubs is a great way to build skills and meet new people. [span_30](start_span)Below is a list of our current offerings[span_30](end_span).</p>
+
+        <div class="club-card">
+            <h3>Computer Science Society</h3>
+            <p>Focused on innovation and software development. We host coding workshops and guest speaker events.</p>
+            <span class="meeting-tag">Meetings: Mondays & Wednesdays at 4:00 PM</span>
+            <a href="#" class="btn">How to Join</a>
+        </div>
+
+        <div class="club-card">
+            <h3>Business & Entrepreneurship Club</h3>
+            <p>Learn how to draft business plans and network with local entrepreneurs and industry leaders.</p>
+            <span class="meeting-tag">Meetings: Tuesdays at 3:00 PM</span>
+            <a href="#" class="btn">How to Join</a>
+        </div>
+
+        <div class="club-card">
+            <h3>Music and Drama Society</h3>
+            <p>A place for students to express their creativity through performance art, music, and theater productions.</p>
+            <span class="meeting-tag">Meetings: Fridays at 2:00 PM</span>
+            <a href="#" class="btn">How to Join</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 School Website. [span_31](start_span)All rights reserved.[span_31](end_span)</p>
+    </div>
+
+</body>
+</html>
