@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Library — Greenfield Academy</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy:   #1A3557;
+      --gold:   #F4A61D;
+      --bg:     #F8F9FA;
+      --card:   #E9ECEF;
+      --text:   #2D2D2D;
+      --sky:    #3A86C8;
+      --green:  #2E7D32;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      background: var(--navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--gold); }
+    .nav-toggle { display: none; cursor: pointer; }
+    .nav-toggle span {
+      display: block; width: 25px; height: 3px;
+      background: #fff; margin: 5px 0; border-radius: 2px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+      padding: 80px 40px;
+    }
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: bold;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    /* ── MAIN ── */
+    .main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-family: Georgia, serif;
+      font-size: 26px;
+      font-weight: bold;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 32px;
+    }
+    .divider {
+      width: 60px; height: 4px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin-bottom: 32px;
+    }
+
+    /* ── HOURS STRIP ── */
+    .hours-strip {
+      background: var(--gold);
+      border-radius: 12px;
+      padding: 24px 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+    .hours-strip h3 {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: var(--navy);
+      font-weight: bold;
+    }
+    .hours-grid {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .hours-item { text-align: center; }
+    .hours-item .day {
+      font-size: 13px;
+      font-weight: bold;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .hours-item .time {
+      font-size: 15px;
+      color: var(--navy);
+      margin-top: 4px;
+    }
+
+    /* ── RESOURCES CARDS ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--card);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .card-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-top: 10px;
+    }
+
+    /* ── TWO-COL SECTION ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    /* ── BORROWING RULES ── */
+    .rules-box {
+      background: #fff;
+      border: 1px solid var(--card);
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .rules-box h3 {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .rule-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--card);
+    }
+    .rule-item:last-child { border-bottom: none; }
+    .rule-num {
+      background: var(--navy);
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .rule-text { font-size: 15px; color: var(--text); line-height: 1.5; }
+
+    /* ── E-RESOURCES ── */
+    .eresources-box {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 28px;
+      color: #fff;
+    }
+    .eresources-box h3 {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .eresource-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-decoration: none;
+      color: #fff;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+    .eresource-link:last-child { border-bottom: none; }
+    .eresource-link:hover { color: var(--gold); }
+    .eresource-icon {
+      width: 36px; height: 36px;
+      background: rgba(244,166,29,0.2);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .eresource-desc { font-size: 12px; opacity: 0.7; margin-top: 2px; }
+
+    /* ── INFO TABLE ── */
+    .info-section { margin-bottom: 60px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    thead { background: var(--navy); color: #fff; }
+    th {
+      padding: 14px 20px;
+      text-align: left;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    td {
+      padding: 14px 20px;
+      font-size: 15px;
+      border-bottom: 1px solid var(--card);
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: var(--bg); }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 48px 40px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .cta-section h2 {
+      font-family: Georgia, serif;
+      font-size: 26px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .cta-section p {
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin: 6px;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--navy);
+      color: var(--navy);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: var(--bg);
+      text-align: center;
+      padding: 28px 40px;
+      font-size: 13px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; flex-direction: column; position: absolute;
+        top: 64px; left: 0; right: 0; background: var(--navy); padding: 20px; gap: 16px; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .hero { padding: 60px 20px; }
+      .hero h1 { font-size: 26px; }
+      .main { padding: 40px 20px; }
+      .hours-strip { flex-direction: column; align-items: flex-start; }
+      .two-col { grid-template-columns: 1fr; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 36px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="nav-brand" href="index.html">🏫 Greenfield Academy</a>
+  <div class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="admissions.html">Admissions</a></li>
+    <li><a href="library.html" class="active">Library</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">📚 Knowledge Hub</div>
+  <h1>School Library & Resource Centre</h1>
+  <p>Your gateway to knowledge — thousands of books, digital resources, and a quiet space to learn and grow.</p>
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+  <!-- OPENING HOURS -->
+  <div class="hours-strip">
+    <div>
+      <h3>📅 Opening Hours</h3>
+      <p style="font-size:14px; color:var(--navy); margin-top:4px;">We are open during all school days</p>
+    </div>
+    <div class="hours-grid">
+      <div class="hours-item">
+        <div class="day">Mon – Fri</div>
+        <div class="time">7:00 AM – 6:00 PM</div>
+      </div>
+      <div class="hours-item">
+        <div class="day">Saturday</div>
+        <div class="time">8:00 AM – 2:00 PM</div>
+      </div>
+      <div class="hours-item">
+        <div class="day">Sunday</div>
+        <div class="time">Closed</div>
+      </div>
+      <div class="hours-item">
+        <div class="day">Public Holidays</div>
+        <div class="time">Closed</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESOURCES -->
+  <h2 class="section-title">Library Resources</h2>
+  <p class="section-sub">Explore our wide range of physical and digital materials available to all students and staff.</p>
+  <div class="divider"></div>
+
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-icon">📖</div>
+      <h3>Fiction & Literature</h3>
+      <p>Over 3,000 novels, short stories, and literary works spanning African, world, and classic literature.</p>
+      <span class="badge">3,000+ Titles</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔬</div>
+      <h3>Science & Technology</h3>
+      <p>Textbooks, reference books, and journals covering Biology, Chemistry, Physics, and Computer Science.</p>
+      <span class="badge">Updated 2024</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">📰</div>
+      <h3>Newspapers & Journals</h3>
+      <p>Daily newspapers, academic journals, and periodicals available for reading within the library.</p>
+      <span class="badge">Daily Updated</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗺️</div>
+      <h3>Reference Section</h3>
+      <p>Encyclopaedias, atlases, dictionaries, and almanacs available for in-library reference use only.</p>
+      <span class="badge">In-Library Only</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">💻</div>
+      <h3>Computer Workstations</h3>
+      <p>12 desktop computers with internet access for research, e-learning, and digital resource access.</p>
+      <span class="badge">12 Stations</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎧</div>
+      <h3>Quiet Study Area</h3>
+      <p>A dedicated silent study zone with individual desks, good lighting, and a calm environment for focused work.</p>
+      <span class="badge">40 Seats</span>
+    </div>
+  </div>
+
+  <!-- BORROWING RULES & E-RESOURCES -->
+  <div class="two-col">
+
+    <!-- BORROWING RULES -->
+    <div class="rules-box">
+      <h3>📋 Borrowing Rules</h3>
+      <div class="rule-item">
+        <div class="rule-num">1</div>
+        <div class="rule-text">Students may borrow up to <strong>3 books</strong> at a time using their student ID card.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">2</div>
+        <div class="rule-text">Books must be returned within <strong>14 days</strong>. Renewals can be done once at the library desk.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">3</div>
+        <div class="rule-text">A fine of <strong>Ksh 5 per day</strong> is charged for overdue books.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">4</div>
+        <div class="rule-text">Lost or damaged books must be <strong>replaced or paid for</strong> at the current market price.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">5</div>
+        <div class="rule-text">Reference books, newspapers, and journals are <strong>not available for borrowing</strong> — in-library use only.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">6</div>
+        <div class="rule-text">Food and drinks are <strong>strictly prohibited</strong> inside the library at all times.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">7</div>
+        <div class="rule-text">Mobile phones must be <strong>silenced</strong> and phone calls are not permitted inside the library.</div>
+      </div>
+    </div>
+
+    <!-- E-RESOURCES -->
+    <div class="eresources-box">
+      <h3>🌐 E-Resource Links</h3>
+      <a class="eresource-link" href="https://www.kenyatta.ac.ke/library" target="_blank">
+        <div class="eresource-icon">🏛️</div>
+        <div>
+          <div>Kenya National Library Service</div>
+          <div class="eresource-desc">National digital library catalogue and resources</div>
+        </div>
+      </a>
+      <a class="eresource-link" href="https://www.britannica.com" target="_blank">
+        <div class="eresource-icon">📚</div>
+        <div>
+          <div>Encyclopaedia Britannica</div>
+          <div class="eresource-desc">Trusted reference articles and academic content</div>
+        </div>
+      </a>
+      <a class="eresource-link" href="https://scholar.google.com" target="_blank">
+        <div class="eresource-icon">🎓</div>
+        <div>
+          <div>Google Scholar</div>
+          <div class="eresource-desc">Academic papers, theses, and research articles</div>
+        </div>
+      </a>
+      <a class="eresource-link" href="https://www.gutenberg.org" target="_blank">
+        <div class="eresource-icon">📖</div>
+        <div>
+          <div>Project Gutenberg</div>
+          <div class="eresource-desc">60,000+ free classic e-books online</div>
+        </div>
+      </a>
+      <a class="eresource-link" href="https://openlibrary.org" target="_blank">
+        <div class="eresource-icon">🌍</div>
+        <div>
+          <div>Open Library</div>
+          <div class="eresource-desc">Borrow and read millions of books online for free</div>
+        </div>
+      </a>
+      <a class="eresource-link" href="https://www.khanacademy.org" target="_blank">
+        <div class="eresource-icon">✏️</div>
+        <div>
+          <div>Khan Academy</div>
+          <div class="eresource-desc">Free lessons for all subjects and levels</div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- BORROWING LIMITS TABLE -->
+  <div class="info-section">
+    <h2 class="section-title">Borrowing Limits by Category</h2>
+    <p class="section-sub">Different book categories have different borrowing limits and loan periods.</p>
+    <div class="divider"></div>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Books Allowed</th>
+          <th>Loan Period</th>
+          <th>Renewable?</th>
+          <th>Fine Per Day</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fiction & Literature</td>
+          <td>3 books</td>
+          <td>14 days</td>
+          <td>Yes (once)</td>
+          <td>Ksh 5</td>
+        </tr>
+        <tr>
+          <td>Textbooks & Academic</td>
+          <td>2 books</td>
+          <td>7 days</td>
+          <td>Yes (once)</td>
+          <td>Ksh 10</td>
+        </tr>
+        <tr>
+          <td>Reference Books</td>
+          <td>Not borrowable</td>
+          <td>In-library only</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>Newspapers/Journals</td>
+          <td>Not borrowable</td>
+          <td>In-library only</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>Teacher/Staff</td>
+          <td>5 books</td>
+          <td>30 days</td>
+          <td>Yes (twice)</td>
+          <td>Ksh 5</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Need Help Finding a Book?</h2>
+    <p>Visit the library desk and our librarian will be happy to assist you in locating any resource.</p>
+    <a class="btn" href="contact.html">📞 Contact the Library</a>
+    <a class="btn btn-outline" href="index.html">🏠 Back to Home</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Greenfield Academy</strong> &mdash; Library &amp; Resource Centre</p>
+  <p style="margin-top:6px; opacity:0.8;">© 2026 Greenfield Academy. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
