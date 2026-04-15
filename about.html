@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us — Sunrise Academy</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -23,57 +24,6 @@
       color: var(--body);
     }
 
-    /* ── NAVBAR ── */
-    nav {
-      width: 100%;
-      background: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 40px;
-      height: 64px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav-brand {
-      font-family: Georgia, serif;
-      font-size: 20px;
-      font-weight: bold;
-      color: var(--gold);
-      text-decoration: none;
-      letter-spacing: 0.5px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-family: Arial, sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--gold);
-    }
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
-    .nav-toggle span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      background: #fff;
-      border-radius: 2px;
-    }
 
     /* ── HERO ── */
     .hero {
@@ -372,27 +322,45 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav>
-    <a class="nav-brand" href="index.html">🎓 Sunrise Academy</a>
-    <div class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
-      <span></span><span></span><span></span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About Us</a></li>
-      <li><a href="academics.html">Academics</a></li>
-      <li><a href="admissions.html">Admissions</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+ <nav class="navbar">
+        <div class="logo">EXCELLENCE SCHOOL</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            
+            <!--dropdown-->
+            <li class="dropdown">
+                <a href="#">More</a>
+                <ul class="dropdown-menu">
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="staff.html">Staff</a></li>
+                    <li><a href="clubs.html">Clubs</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="students.html">Students</a></li>
+                    <li><a href="health.html">Health</a></li>
+                    <li><a href="technology.html">Technology</a></li>
+                    <li><a href="alumni.html">Alumni</a></li>
+                    <li><a href="exams.html">Exams</a></li>
+                    <li><a href="environment.html">Environment</a></li>
+                    <li><a href="parents.html">Parents</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="awards.html">Awards</a></li>
+                    <li><a href="canteen.html">Canteen</a></li>
+                    <li><a href="counselling.html">Counselling</a></li>
+                    <li><a href="transport.html">Transport</a></li>
+                    <li><a href="faith.html">Faith</a></li>
+                    <li><a href="calender.html">Calendar</a></li>
+                </ul>
+            </li>
+        </ul>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-eyebrow">Est. 1987</div>
-    <h1>About <span>Sunrise Academy</span></h1>
-    <p>A legacy of academic excellence, character, and community — shaping tomorrow's leaders since 1987.</p>
-  </section>
+    </nav>
+
+  
 
   <!-- MAIN CONTENT -->
   <main class="main">

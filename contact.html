@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -18,22 +19,7 @@
     a { color: #F4A61D; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* Navbar */
-    nav {
-      background-color: #1A3557;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-    nav ul li { margin-left: 1rem; }
-    nav ul li a { color: #F8F9FA; font-weight: bold; }
+    
 
     /* Hero */
     .hero {
@@ -110,15 +96,43 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <div class="logo"><a href="#">MySite</a></div>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+  <nav class="navbar">
+        <div class="logo">EXCELLENCE SCHOOL</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            
+            <!--dropdown-->
+            <li class="dropdown">
+                <a href="#">More</a>
+                <ul class="dropdown-menu">
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="staff.html">Staff</a></li>
+                    <li><a href="clubs.html">Clubs</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="students.html">Students</a></li>
+                    <li><a href="health.html">Health</a></li>
+                    <li><a href="technology.html">Technology</a></li>
+                    <li><a href="alumni.html">Alumni</a></li>
+                    <li><a href="exams.html">Exams</a></li>
+                    <li><a href="environment.html">Environment</a></li>
+                    <li><a href="parents.html">Parents</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="awards.html">Awards</a></li>
+                    <li><a href="canteen.html">Canteen</a></li>
+                    <li><a href="counselling.html">Counselling</a></li>
+                    <li><a href="transport.html">Transport</a></li>
+                    <li><a href="faith.html">Faith</a></li>
+                    <li><a href="calender.html">Calendar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </nav>
 
   <!-- Hero -->
   <section class="hero">
