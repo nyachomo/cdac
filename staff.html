@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff & Faculty</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #F8F9FA;
+            color: #2D2D2D;
+        }
+
+        nav {
+            background: #1A3557;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .hero {
+            background: #1A3557;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px;
+        }
+
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #E9ECEF;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .photo {
+            width: 100px;
+            height: 100px;
+            background: #E9ECEF;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+        }
+
+        footer {
+            background: #1A3557;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .staff-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div>School Name</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="staff.html">Staff</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Staff & Faculty</h1>
+        <p>Meet our dedicated teaching and support staff.</p>
+    </section>
+
+    <div class="container">
+        <div class="staff-grid">
+            <div class="card">
+                <div class="photo"></div>
+                <h3>Mrs. Jane Wanjiku</h3>
+                <p>Principal</p>
+                <p>Administration</p>
+            </div>
+
+            <div class="card">
+                <div class="photo"></div>
+                <h3>Mr. David Mwangi</h3>
+                <p>Head Teacher</p>
+                <p>Academics</p>
+            </div>
+
+            <div class="card">
+                <div class="photo"></div>
+                <h3>Ms. Grace Achieng</h3>
+                <p>Mathematics Teacher</p>
+                <p>Sciences Department</p>
+            </div>
+
+            <div class="card">
+                <div class="photo"></div>
+                <h3>Mr. Peter Kamau</h3>
+                <p>Sports Coordinator</p>
+                <p>Physical Education</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        School Name © 2026
+    </footer>
+
+</body>
+</html>
