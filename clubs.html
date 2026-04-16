@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clubs & Societies - School Website</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         /* SECTION 1: DESIGN GUIDELINES - COLOURS & TYPOGRAPHY */
         body {
@@ -25,33 +26,7 @@
         h3 { font-size: 20px; }
 
         [span_9](start_span)/* NAVIGATION BAR[span_9](end_span) */
-        .navbar {
-            background-color: #1A3557; [span_10](start_span)/* School Navy[span_10](end_span) */
-            color: #FFFFFF;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-        }
-
-        .navbar .school-name {
-            font-size: 20px;
-            font-family: Georgia, serif;
-            font-weight: bold;
-        }
-
-        .navbar-links a {
-            color: #FFFFFF;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600; [span_11](start_span)/* Semi-bold[span_11](end_span) */
-            margin-left: 20px;
-        }
-
-        .navbar-links a:hover {
-            color: #F4A61D; [span_12](start_span)/* Gold Accent hover[span_12](end_span) */
-        }
-
+        
         [span_13](start_span)/* HERO SECTION[span_13](end_span) */
         .hero {
             background-color: #1A3557; [span_14](start_span)/* School Navy background[span_14](end_span) */
@@ -119,13 +94,43 @@
 </head>
 <body>
 
-    <div class="navbar">
-        <div class="school-name">School Website</div>
-        <div class="navbar-links">
-            <a href="index.html">Home</a>
-            <a href="clubs.html" style="color: #F4A61D;">Clubs</a>
-        </div>
-    </div>
+    <nav class="navbar">
+        <div class="logo">EXCELLENCE SCHOOL</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            
+            <!--dropdown-->
+            <li class="dropdown">
+                <a href="#">More</a>
+                <ul class="dropdown-menu">
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="staff.html">Staff</a></li>
+                    <li><a href="clubs.html">Clubs</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="students.html">Students</a></li>
+                    <li><a href="health.html">Health</a></li>
+                    <li><a href="technology.html">Technology</a></li>
+                    <li><a href="alumni.html">Alumni</a></li>
+                    <li><a href="exams.html">Exams</a></li>
+                    <li><a href="environment.html">Environment</a></li>
+                    <li><a href="parents.html">Parents</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="awards.html">Awards</a></li>
+                    <li><a href="canteen.html">Canteen</a></li>
+                    <li><a href="counselling.html">Counselling</a></li>
+                    <li><a href="transport.html">Transport</a></li>
+                    <li><a href="faith.html">Faith</a></li>
+                    <li><a href="calender.html">Calendar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </nav>
 
     <div class="hero">
         <h1>Clubs & Societies</h1>
