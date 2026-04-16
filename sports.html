@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Sports</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F8F9FA;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, serif;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #1A3557;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #F4A61D;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(26,53,87,0.8), rgba(26,53,87,0.8)), url('https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      margin-top: 10px;
+    }
+
+    /* Sections */
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #1A3557;
+    }
+
+    /* Sports List */
+    .sports {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      transition: 0.3s;
+    }
+
+    /* Achievements */
+    .achievements ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+
+    /* Fixtures */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #1A3557;
+      color: white;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1A3557;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h2>School Sports</h2>
+    <ul>
+      <li><a href="#sports">Sports</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#fixtures">Fixtures</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Welcome to Our Sports Program</h1>
+    <p>Building teamwork, discipline, and excellence</p>
+  </div>
+
+  <!-- Sports -->
+  <section id="sports">
+    <h2 class="section-title">Our Sports</h2>
+    <div class="sports">
+      <div class="card">Football</div>
+      <div class="card">Basketball</div>
+      <div class="card">Athletics</div>
+      <div class="card">Volleyball</div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements" class="achievements">
+    <h2 class="section-title">Achievements</h2>
+    <ul>
+      <li>Regional Football Champions 2025</li>
+      <li>National Athletics Finalists</li>
+      <li>Basketball County Winners</li>
+    </ul>
+  </section>
+
+  <!-- Fixtures -->
+  <section id="fixtures">
+    <h2 class="section-title">Upcoming Fixtures</h2>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Sport</th>
+        <th>Opponent</th>
+      </tr>
+      <tr>
+        <td>April 20</td>
+        <td>Football</td>
+        <td>Green High</td>
+      </tr>
+      <tr>
+        <td>April 25</td>
+        <td>Basketball</td>
+        <td>City Academy</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 School Sports Program</p>
+  </footer>
+
+</body>
+</html>
