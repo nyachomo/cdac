@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News & Events</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #F8F9FA;
+    color: #2D2D2D;
+}
+
+
+
+/* HERO */
+.hero {
+    background: #F4A61D;
+    color: #1A3557;
+    text-align: center;
+    padding: 40px;
+    margin-top: 20px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+}
+
+/* MAIN */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #E9ECEF;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+button {
+    background: #F4A61D;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #1A3557;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+.footer {
+    background: #1A3557;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">EXCELLENCE SCHOOL</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            
+            <!--dropdown-->
+            <li class="dropdown">
+                <a href="#">More</a>
+                <ul class="dropdown-menu">
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="staff.html">Staff</a></li>
+                    <li><a href="clubs.html">Clubs</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="students.html">Students</a></li>
+                    <li><a href="health.html">Health</a></li>
+                    <li><a href="technology.html">Technology</a></li>
+                    <li><a href="alumni.html">Alumni</a></li>
+                    <li><a href="exams.html">Exams</a></li>
+                    <li><a href="environment.html">Environment</a></li>
+                    <li><a href="parents.html">Parents</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="awards.html">Awards</a></li>
+                    <li><a href="canteen.html">Canteen</a></li>
+                    <li><a href="counselling.html">Counselling</a></li>
+                    <li><a href="transport.html">Transport</a></li>
+                    <li><a href="faith.html">Faith</a></li>
+                    <li><a href="calender.html">Calendar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </nav>
+
+<div class="hero py-5">
+    <h1>News & Events</h1>
+    <p>Stay updated with the latest school activities</p>
+</div>
+
+<div class="container">
+    <div class="cards">
+
+        <div class="card">
+            <h3>Sports Day Success</h3>
+            <p><strong>Date:</strong> April 10, 2026</p>
+            <p>Students participated in exciting competitions and won multiple awards.</p>
+            <button>Read More</button>
+        </div>
+
+        <div class="card">
+            <h3>Science Fair</h3>
+            <p><strong>Date:</strong> March 28, 2026</p>
+            <p>Innovative projects showcased by students impressed judges.</p>
+            <button>Read More</button>
+        </div>
+
+        <div class="card">
+            <h3>New Library Opening</h3>
+            <p><strong>Date:</strong> March 15, 2026</p>
+            <p>The school opened a modern library with digital resources.</p>
+            <button>Read More</button>
+        </div>
+
+        <div class="card">
+            <h3>Coding Competition</h3>
+            <p><strong>Date:</strong> February 20, 2026</p>
+            <p>Students competed in programming challenges and won prizes.</p>
+            <button>Read More</button>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+    <p>My School © 2026</p>
+</div>
+
+</body>
+</html>

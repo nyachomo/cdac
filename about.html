@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Sunrise Academy</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #1A3557;
+      --gold:   #F4A61D;
+      --bg:     #F8F9FA;
+      --card:   #E9ECEF;
+      --body:   #2D2D2D;
+      --link:   #3A86C8;
+      --green:  #2E7D32;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--body);
+    }
+
+
+    /* ── HERO ── */
+    .hero {
+      width: 100%;
+      background: var(--navy);
+      padding: 72px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        135deg,
+        rgba(244,166,29,0.06) 0px,
+        rgba(244,166,29,0.06) 1px,
+        transparent 1px,
+        transparent 40px
+      );
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: 42px;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      font-family: Arial, sans-serif;
+      font-size: 17px;
+      color: rgba(255,255,255,0.82);
+      max-width: 580px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* ── MAIN WRAPPER ── */
+    .main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 40px;
+    }
+
+    /* ── SECTION HEADING ── */
+    .section-heading {
+      font-family: Georgia, serif;
+      font-size: 26px;
+      font-weight: bold;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .section-sub {
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      color: var(--link);
+      margin-bottom: 32px;
+    }
+    .gold-bar {
+      width: 52px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin-bottom: 32px;
+    }
+
+    /* ── HISTORY ── */
+    .history-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+      margin-bottom: 64px;
+    }
+    .history-text p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--body);
+      margin-bottom: 16px;
+    }
+    .history-image {
+      background: var(--card);
+      border: 1px solid #E9ECEF;
+      border-radius: 12px;
+      height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #999;
+    }
+    .history-image svg { opacity: 0.4; }
+    .history-image span { font-size: 13px; }
+
+    /* ── STATS STRIP ── */
+    .stats-strip {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 36px 40px;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin-bottom: 64px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .stat-item h3 {
+      font-family: Georgia, serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: var(--gold);
+    }
+    .stat-item p {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      margin-top: 4px;
+    }
+
+    /* ── VISION & MISSION ── */
+    .vm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+    .vm-card {
+      background: #fff;
+      border: 1px solid #E9ECEF;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .vm-card .vm-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--gold);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 20px;
+    }
+    .vm-card h3 {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .vm-card p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--body);
+    }
+
+    /* ── CORE VALUES ── */
+    .values-section { margin-bottom: 64px; }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .value-card {
+      background: #fff;
+      border: 1px solid #E9ECEF;
+      border-radius: 12px;
+      padding: 24px 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border-top: 4px solid var(--gold);
+      transition: transform 0.2s;
+    }
+    .value-card:hover { transform: translateY(-4px); }
+    .value-card h3 {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .value-card p {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--body);
+    }
+
+    /* ── PRINCIPAL MESSAGE ── */
+    .principal-section { margin-bottom: 64px; }
+    .principal-card {
+      background: #fff;
+      border: 1px solid #E9ECEF;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .principal-photo {
+      background: var(--card);
+      border-radius: 12px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #aaa;
+      font-size: 12px;
+      text-align: center;
+    }
+    .principal-photo svg { opacity: 0.35; }
+    .principal-message blockquote {
+      font-family: Georgia, serif;
+      font-size: 17px;
+      font-style: italic;
+      color: var(--body);
+      line-height: 1.8;
+      border-left: 4px solid var(--gold);
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    .principal-message .principal-name {
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      color: var(--navy);
+    }
+    .principal-message .principal-title {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: var(--link);
+    }
+    .badge {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      width: 100%;
+      background: var(--navy);
+      text-align: center;
+      padding: 28px 40px;
+    }
+    footer p {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: var(--bg);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--navy); padding: 16px 20px; gap: 16px; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: flex; }
+      .hero { padding: 48px 20px; }
+      .hero h1 { font-size: 28px; }
+      .main { padding: 40px 20px; }
+      .history-grid { grid-template-columns: 1fr; }
+      .vm-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+      .principal-card { grid-template-columns: 1fr; }
+      .stats-strip { flex-direction: column; padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+ <nav class="navbar">
+        <div class="logo">EXCELLENCE SCHOOL</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            
+            <!--dropdown-->
+            <li class="dropdown">
+                <a href="#">More</a>
+                <ul class="dropdown-menu">
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="staff.html">Staff</a></li>
+                    <li><a href="clubs.html">Clubs</a></li>
+                    <li><a href="sports.html">Sports</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="students.html">Students</a></li>
+                    <li><a href="health.html">Health</a></li>
+                    <li><a href="technology.html">Technology</a></li>
+                    <li><a href="alumni.html">Alumni</a></li>
+                    <li><a href="exams.html">Exams</a></li>
+                    <li><a href="environment.html">Environment</a></li>
+                    <li><a href="parents.html">Parents</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="awards.html">Awards</a></li>
+                    <li><a href="canteen.html">Canteen</a></li>
+                    <li><a href="counselling.html">Counselling</a></li>
+                    <li><a href="transport.html">Transport</a></li>
+                    <li><a href="faith.html">Faith</a></li>
+                    <li><a href="calender.html">Calendar</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </nav>
+
+  
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- SCHOOL HISTORY -->
+    <section style="margin-bottom: 64px;">
+      <p class="section-sub">Our Story</p>
+      <h2 class="section-heading">School History</h2>
+      <div class="gold-bar"></div>
+      <div class="history-grid">
+        <div class="history-text">
+          <p>
+            Sunrise Academy was founded in 1987 by a group of visionary educators who believed that every child
+            deserved access to a world-class education rooted in values, discipline, and innovation. What began
+            as a modest institution of 120 students and 12 teachers has grown into one of the region's most
+            respected centres of learning.
+          </p>
+          <p>
+            Through the decades, the Academy has navigated significant milestones — the expansion of our
+            secondary campus in 1999, the introduction of our science and technology wing in 2007, and the
+            launch of our digital learning programme in 2018. Each era has brought new growth while preserving
+            the founding values that define us.
+          </p>
+          <p>
+            Today, Sunrise Academy is home to over 2,400 students, 160 dedicated staff members, and a vibrant
+            alumni network spanning five continents. Our graduates are doctors, engineers, artists, entrepreneurs,
+            and public servants — a testament to the Academy's enduring impact.
+          </p>
+        </div>
+        <div class="history-image">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#1A3557" stroke-width="1.5">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+          </svg>
+          <span>School Campus Photo</span>
+          <span style="font-size:11px; color:#bbb;">[Placeholder Image]</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat-item"><h3>37+</h3><p>Years of Excellence</p></div>
+      <div class="stat-item"><h3>2,400+</h3><p>Current Students</p></div>
+      <div class="stat-item"><h3>160</h3><p>Staff Members</p></div>
+      <div class="stat-item"><h3>8,500+</h3><p>Alumni Worldwide</p></div>
+    </div>
+
+    <!-- VISION & MISSION -->
+    <section style="margin-bottom: 64px;">
+      <p class="section-sub">What Drives Us</p>
+      <h2 class="section-heading">Vision & Mission</h2>
+      <div class="gold-bar"></div>
+      <div class="vm-grid">
+        <div class="vm-card">
+          <div class="vm-icon">🔭</div>
+          <h3>Our Vision</h3>
+          <p>
+            To be a leading institution that inspires learners to achieve their fullest potential — academically,
+            morally, and socially — and to contribute meaningfully to a rapidly changing global community.
+          </p>
+        </div>
+        <div class="vm-card">
+          <div class="vm-icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>
+            To provide a nurturing, inclusive, and intellectually stimulating environment where every student
+            is equipped with the knowledge, skills, and values necessary to lead, innovate, and serve with
+            integrity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE VALUES -->
+    <section class="values-section">
+      <p class="section-sub">What We Stand For</p>
+      <h2 class="section-heading">Core Values</h2>
+      <div class="gold-bar"></div>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>🌟 Excellence</h3>
+          <p>We hold ourselves to the highest academic and personal standards, encouraging every learner to go beyond the ordinary and strive for distinction in all they do.</p>
+        </div>
+        <div class="value-card">
+          <h3>🤝 Integrity</h3>
+          <p>Honesty, transparency, and ethical conduct are the cornerstones of life at Sunrise Academy — in the classroom, on the field, and in our community interactions.</p>
+        </div>
+        <div class="value-card">
+          <h3>💡 Innovation</h3>
+          <p>We cultivate curious, creative minds that are not afraid to question, experiment, and reimagine solutions to the challenges facing our world today and tomorrow.</p>
+        </div>
+        <div class="value-card">
+          <h3>🌍 Inclusivity</h3>
+          <p>Every student, regardless of background or ability, belongs here. We celebrate diversity and ensure that our school community reflects the richness of our society.</p>
+        </div>
+        <div class="value-card">
+          <h3>🌱 Responsibility</h3>
+          <p>We nurture a deep sense of personal, social, and environmental responsibility — preparing students to be thoughtful stewards of their communities and the planet.</p>
+        </div>
+        <div class="value-card">
+          <h3>❤️ Compassion</h3>
+          <p>We believe in the power of empathy and service. Our students are taught to look outward, lend a hand, and lead with kindness in everything they do.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCIPAL MESSAGE -->
+    <section class="principal-section">
+      <p class="section-sub">A Word From Leadership</p>
+      <h2 class="section-heading">Principal's Message</h2>
+      <div class="gold-bar"></div>
+      <div class="principal-card">
+        <div class="principal-photo">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#1A3557" stroke-width="1.5">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+          <span>Principal's<br>Photo</span>
+          <span style="color:#ccc;">[Placeholder]</span>
+        </div>
+        <div class="principal-message">
+          <div class="badge">Message from the Principal</div>
+          <blockquote>
+            "At Sunrise Academy, we believe that education is not merely the transfer of knowledge — it is the
+            transformation of character. Every day, I am humbled by the dedication of our teachers, the curiosity
+            of our students, and the trust that families place in us. We are committed to providing an environment
+            where every child feels seen, valued, and challenged to grow. Our doors are open to dreamers,
+            thinkers, and doers — and we are proud to walk alongside each of them on their journey."
+          </blockquote>
+          <p class="principal-name">Dr. Amina Ochieng</p>
+          <p class="principal-title">Principal, Sunrise Academy</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Sunrise Academy &copy; 2025 — Nurturing Excellence, Building Character</p>
+  </footer>
+
+</body>
+</html>
