@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health & Wellness — School Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F8F9FA;
+      color: #2D2D2D;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      width: 100%;
+      background-color: #1A3557;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      color: #F4A61D;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #F4A61D;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      width: 100%;
+      background-color: #1A3557;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      font-weight: bold;
+      color: #F8F9FA;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: #F4A61D;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ── MAIN ── */
+    .main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 50px 40px;
+    }
+
+    /* Section headings */
+    .section-title {
+      font-family: Georgia, serif;
+      font-size: 26px;
+      font-weight: bold;
+      color: #1A3557;
+      margin-bottom: 10px;
+      border-left: 5px solid #F4A61D;
+      padding-left: 14px;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: #2D2D2D;
+      margin-bottom: 30px;
+      padding-left: 19px;
+    }
+
+    section {
+      margin-bottom: 55px;
+    }
+
+    /* ── CARDS GRID ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #E9ECEF;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .card-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #1A3557;
+      margin-bottom: 10px;
+    }
+
+    .card p, .card ul {
+      font-size: 16px;
+      color: #2D2D2D;
+      line-height: 1.65;
+    }
+
+    .card ul {
+      padding-left: 18px;
+    }
+
+    /* ── BADGE / TAG ── */
+    .badge {
+      display: inline-block;
+      background: #2E7D32;
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 4px;
+      padding: 3px 10px;
+      margin-bottom: 10px;
+    }
+
+    /* ── TIPS LIST ── */
+    .tips-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .tip-item {
+      background: #E9ECEF;
+      border-radius: 10px;
+      padding: 16px 18px;
+      font-size: 15px;
+      color: #2D2D2D;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .tip-item span.tip-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    /* ── HOURS TABLE ── */
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    .hours-table th {
+      background-color: #1A3557;
+      color: #F8F9FA;
+      padding: 12px 16px;
+      text-align: left;
+      font-family: Arial, sans-serif;
+    }
+
+    .hours-table td {
+      padding: 11px 16px;
+      border-bottom: 1px solid #E9ECEF;
+      color: #2D2D2D;
+    }
+
+    .hours-table tr:nth-child(even) td {
+      background: #E9ECEF;
+    }
+
+    /* ── EMERGENCY BOX ── */
+    .emergency-box {
+      background: #fff3cd;
+      border-left: 6px solid #F4A61D;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 20px;
+    }
+
+    .emergency-box h3 {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1A3557;
+      margin-bottom: 14px;
+    }
+
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .contact-card {
+      background: #FFFFFF;
+      border: 1px solid #E9ECEF;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    }
+
+    .contact-card .label {
+      font-size: 13px;
+      font-weight: bold;
+      color: #3A86C8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .contact-card .value {
+      font-size: 16px;
+      font-weight: bold;
+      color: #1A3557;
+    }
+
+    .contact-card .sub {
+      font-size: 13px;
+      color: #2D2D2D;
+      margin-top: 3px;
+    }
+
+    /* ── BUTTON ── */
+    .btn {
+      display: inline-block;
+      background-color: #F4A61D;
+      color: #1A3557;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn:hover {
+      opacity: 0.88;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      width: 100%;
+      background-color: #1A3557;
+      padding: 26px 40px;
+      text-align: center;
+    }
+
+    footer p {
+      color: #F8F9FA;
+      font-size: 13px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        height: auto;
+        padding: 14px 20px;
+        gap: 10px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 40px 20px;
+      }
+
+      .hero h1 {
+        font-size: 26px;
+      }
+
+      .main {
+        padding: 30px 20px;
+      }
+
+      .cards-grid,
+      .tips-list,
+      .contacts-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a class="nav-brand" href="index.html">🏫 Springfield Academy</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="news.html">News</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="staff.html">Staff</a>
+      <a href="clubs.html">Clubs</a>
+      <a href="sports.html">Sports</a>
+      <a href="library.html">Library</a>
+      <a href="students.html">Student Life</a>
+      <a href="health.html" class="active">Health</a>
+      <a href="technology.html">Technology</a>
+      <a href="alumni.html">Alumni</a>
+      <a href="exams.html">Exams</a>
+      <a href="environment.html">Environment</a>
+      <a href="parents.html">Parents</a>
+      <a href="contact.html">Contact</a>
+      <a href="awards.html">Awards</a>
+      <a href="canteen.html">Canteen</a>
+      <a href="counselling.html">Counselling</a>
+      <a href="transport.html">Transport</a>
+      <a href="faith.html">Faith</a>
+      <a href="calendar.html">Calendar</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Health &amp; Wellness</h1>
+    <p>Your wellbeing is our priority — discover the clinic services, mental health support, health tips, and emergency contacts available to every student.</p>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- School Clinic -->
+    <section>
+      <h2 class="section-title">School Clinic</h2>
+      <p class="section-desc">Our on-site clinic is staffed by qualified nurses and a visiting doctor, ready to support students with all health needs.</p>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🏥</div>
+          <span class="badge">Services</span>
+          <h3>General Medical Care</h3>
+          <ul>
+            <li>First aid &amp; wound treatment</li>
+            <li>Illness assessment &amp; referrals</li>
+            <li>Medication administration</li>
+            <li>Routine health screenings</li>
+            <li>Vaccination record keeping</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-icon">📋</div>
+          <span class="badge">Clinic Info</span>
+          <h3>Clinic Details</h3>
+          <ul>
+            <li><strong>Location:</strong> Block C, Ground Floor</li>
+            <li><strong>Head Nurse:</strong> Sr. Grace Otieno</li>
+            <li><strong>Doctor visits:</strong> Tues &amp; Thurs</li>
+            <li><strong>Beds available:</strong> 8 rest beds</li>
+            <li><strong>Referral hospital:</strong> St. Mary's General</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-icon">🕐</div>
+          <span class="badge">Hours</span>
+          <h3>Opening Hours</h3>
+          <table class="hours-table" style="margin-top:6px;">
+            <thead>
+              <tr><th>Day</th><th>Hours</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Monday – Friday</td><td>7:00 AM – 6:00 PM</td></tr>
+              <tr><td>Saturday</td><td>8:00 AM – 1:00 PM</td></tr>
+              <tr><td>Sunday</td><td>Emergency only</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mental Health -->
+    <section>
+      <h2 class="section-title">Mental Health Resources</h2>
+      <p class="section-desc">We take mental health as seriously as physical health. Every student has access to confidential support services.</p>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <span class="badge">Support</span>
+          <h3>School Counsellor</h3>
+          <p>Our resident counsellor offers one-on-one confidential sessions for stress, anxiety, grief, peer pressure, and personal challenges. Book through the clinic or guidance office.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🤝</div>
+          <span class="badge">Peer Support</span>
+          <h3>Wellness Ambassadors</h3>
+          <p>Trained student wellness ambassadors are available during break and lunch periods. They provide a friendly ear and can guide you to professional help when needed.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📞</div>
+          <span class="badge">Helpline</span>
+          <h3>Mental Health Helpline</h3>
+          <p>Students in crisis can call the national youth helpline <strong>1199</strong> (free, 24/7). The school also operates an anonymous text support line: <strong>SMS "HELP" to 22100</strong>.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌿</div>
+          <span class="badge">Wellness</span>
+          <h3>Wellness Activities</h3>
+          <ul>
+            <li>Weekly mindfulness sessions (Wed, 4 PM)</li>
+            <li>Stress management workshops</li>
+            <li>Journaling &amp; art therapy clubs</li>
+            <li>Yoga every Friday morning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Health Tips -->
+    <section>
+      <h2 class="section-title">Health Tips for Students</h2>
+      <p class="section-desc">Small daily habits make a big difference to your energy, focus, and overall wellbeing.</p>
+      <div class="tips-list">
+        <div class="tip-item"><span class="tip-icon">💧</span><div><strong>Stay Hydrated</strong><br>Drink at least 8 glasses of water per day. Dehydration reduces concentration.</div></div>
+        <div class="tip-item"><span class="tip-icon">🥦</span><div><strong>Eat Balanced Meals</strong><br>Include vegetables, proteins, and whole grains in every meal from the canteen.</div></div>
+        <div class="tip-item"><span class="tip-icon">😴</span><div><strong>Get Enough Sleep</strong><br>Aim for 8–10 hours each night. Sleep boosts memory and academic performance.</div></div>
+        <div class="tip-item"><span class="tip-icon">🏃</span><div><strong>Stay Active</strong><br>At least 30 minutes of physical activity daily — use the sports grounds!</div></div>
+        <div class="tip-item"><span class="tip-icon">🧼</span><div><strong>Practise Good Hygiene</strong><br>Wash hands regularly, especially before meals and after using washrooms.</div></div>
+        <div class="tip-item"><span class="tip-icon">🚭</span><div><strong>Avoid Harmful Substances</strong><br>The school is a drug, alcohol, and tobacco-free zone. Seek help if you need it.</div></div>
+        <div class="tip-item"><span class="tip-icon">👓</span><div><strong>Protect Your Eyes</strong><br>Take screen breaks every 20 minutes. Visit the clinic if you experience eye strain.</div></div>
+        <div class="tip-item"><span class="tip-icon">💬</span><div><strong>Talk About It</strong><br>Don't bottle up stress. Talk to a friend, teacher, nurse, or counsellor.</div></div>
+      </div>
+    </section>
+
+    <!-- Emergency Contacts -->
+    <section>
+      <h2 class="section-title">Emergency Contacts</h2>
+      <p class="section-desc">In a medical emergency, alert a teacher or staff member immediately. Key contacts are listed below.</p>
+
+      <div class="emergency-box">
+        <h3>⚠️ In an emergency — call the clinic or front office first!</h3>
+        <div class="contacts-grid">
+          <div class="contact-card">
+            <div class="label">School Clinic</div>
+            <div class="value">+254 700 111 222</div>
+            <div class="sub">Mon–Fri 7 AM – 6 PM</div>
+          </div>
+          <div class="contact-card">
+            <div class="label">Head Nurse</div>
+            <div class="value">Sr. Grace Otieno</div>
+            <div class="sub">+254 700 333 444</div>
+          </div>
+          <div class="contact-card">
+            <div class="label">Front Office</div>
+            <div class="value">+254 700 555 666</div>
+            <div class="sub">All hours</div>
+          </div>
+          <div class="contact-card">
+            <div class="label">Referral Hospital</div>
+            <div class="value">St. Mary's General</div>
+            <div class="sub">+254 700 777 888</div>
+          </div>
+          <div class="contact-card">
+            <div class="label">National Ambulance</div>
+            <div class="value">0800 723 253</div>
+            <div class="sub">Free · 24/7</div>
+          </div>
+          <div class="contact-card">
+            <div class="label">Mental Health Helpline</div>
+            <div class="value">1199</div>
+            <div class="sub">Free · 24/7 · Confidential</div>
+          </div>
+        </div>
+      </div>
+
+      <a class="btn" href="counselling.html">Visit Counselling &amp; Support →</a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Springfield Academy &mdash; Health &amp; Wellness &copy; 2025</p>
+  </footer>
+
+</body>
+</html>
